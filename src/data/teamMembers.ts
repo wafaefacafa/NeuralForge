@@ -1,13 +1,13 @@
 // EXPORTS: MOCK_TEAM_MEMBERS, MOCK_TEAM_STATS
 
-import type { ITeamMember, ITeamStats } from '@/types/team';
+import type { ITeamMember } from '@/types/team';
 
-export const MOCK_TEAM_STATS: ITeamStats = {
-  totalMembers: 12,
-  activeMembers: 9,
-  monthlyTrainingJobs: 47,
-  monthlyDeployments: 23,
-};
+export const MOCK_TEAM_STATS = [
+  { key: 'totalMembers', label: '成员总数', value: 12, unit: '人' },
+  { key: 'activeMembers', label: '活跃成员', value: 9, unit: '人', change: 12 },
+  { key: 'monthlyTrainingJobs', label: '本月训练任务', value: 47, unit: '次', change: 8 },
+  { key: 'monthlyDeployments', label: '本月部署次数', value: 23, unit: '次', change: 15 },
+] as const;
 
 export const MOCK_TEAM_MEMBERS: ITeamMember[] = [
   {
