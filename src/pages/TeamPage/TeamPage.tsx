@@ -75,10 +75,10 @@ const STATUS_CONFIG: Record<ITeamMember['status'], { label: string }> = {
 // 统计卡片图标映射
 // ============================================================
 const STAT_ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
-  total: Users,
-  active: UserCheck,
-  training: Activity,
-  deploy: Rocket,
+  totalMembers: Users,
+  activeMembers: UserCheck,
+  monthlyTrainingJobs: Activity,
+  monthlyDeployments: Rocket,
 };
 
 // ============================================================
