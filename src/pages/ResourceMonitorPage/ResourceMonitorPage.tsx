@@ -18,7 +18,7 @@ import ResourceQuotaCards from './ResourceQuotaCards';
 import CostBreakdownChart from './CostBreakdownChart';
 import ResourceAlertTable from './ResourceAlertTable';
 
-import { MOCK_RESOURCE_METRICS, MOCK_RESOURCE_QUOTAS, MOCK_COST_BREAKDOWN } from '@/data/resourceMetrics';
+import { MOCK_RESOURCE_METRICS, MOCK_RESOURCE_QUOTAS, MOCK_COST_BREAKDOWN, MOCK_COST_SUMMARY } from '@/data/resourceMetrics';
 import { MOCK_RESOURCE_ALERTS } from '@/data/resourceAlerts';
 import type { IResourceTimeSeries, IResourceAlert } from '@/types/resources';
 
@@ -211,7 +211,7 @@ export default function ResourceMonitorPage() {
             <h2 className="heading-bold text-xl">本月费用构成</h2>
             <ArrowUpRight className="size-4" />
           </div>
-          <CostBreakdownChart data={MOCK_COST_BREAKDOWN} />
+          <CostBreakdownChart data={MOCK_COST_BREAKDOWN} totalCost={MOCK_COST_SUMMARY.totalThisMonth} changePercent={MOCK_COST_SUMMARY.changePercent} />
         </motion.div>
 
         {/* 资源告警列表（右 8/12） */}

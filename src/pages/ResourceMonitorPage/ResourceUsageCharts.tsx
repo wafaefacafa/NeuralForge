@@ -30,6 +30,7 @@ const CHART_CONFIGS = [
 ];
 
 function filterByTimeRange(data: IResourceTimeSeries[], range: TimeRange): IResourceTimeSeries[] {
+  if (!data || data.length === 0) return [];
   const now = new Date(data[data.length - 1]?.timestamp ?? Date.now()).getTime();
   const ranges: Record<TimeRange, number> = {
     '1h': 60 * 60 * 1000,
